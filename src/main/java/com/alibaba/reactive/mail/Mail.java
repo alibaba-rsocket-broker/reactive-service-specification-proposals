@@ -10,27 +10,27 @@ import java.util.List;
  * @author leijuan
  */
 public class Mail implements Serializable {
-    private String from;
-    private List<String> to;
+    private String sender;
+    private List<String> receivers;
     private List<String> cc;
     private String subject;
     private String textBody;
     private String htmlBody;
 
-    public String getFrom() {
-        return from;
+    public String getSender() {
+        return sender;
     }
 
-    public void setFrom(String from) {
-        this.from = from;
+    public void setSender(String sender) {
+        this.sender = sender;
     }
 
-    public List<String> getTo() {
-        return to;
+    public List<String> getReceivers() {
+        return receivers;
     }
 
-    public void setTo(List<String> to) {
-        this.to = to;
+    public void setReceivers(List<String> receivers) {
+        this.receivers = receivers;
     }
 
     public List<String> getCc() {
@@ -65,10 +65,10 @@ public class Mail implements Serializable {
         this.htmlBody = htmlBody;
     }
 
-    public Mail simple(String from, String to, String subject, String htmlBody) {
+    public Mail simple(String sender, String receiver, String subject, String htmlBody) {
         Mail mail = new Mail();
-        mail.setFrom(from);
-        mail.setTo(Collections.singletonList(to));
+        mail.setSender(sender);
+        mail.setReceivers(Collections.singletonList(receiver));
         mail.setSubject(subject);
         mail.setHtmlBody(htmlBody);
         return mail;
