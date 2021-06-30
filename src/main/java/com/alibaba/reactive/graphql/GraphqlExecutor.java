@@ -3,6 +3,7 @@ package com.alibaba.reactive.graphql;
 import org.intellij.lang.annotations.Language;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 import java.util.Map;
@@ -34,4 +35,14 @@ public interface GraphqlExecutor {
     Mono<Map<String, Object>> execute(@Language("GraphQL") @NotNull String query,
                                       @Nullable Map<String, Object> variables,
                                       @Nullable String operationName);
+
+    /**
+     * GraphQL subscribe
+     *
+     * @param subscription subscription
+     * @param variables    variables
+     * @return data flux
+     */
+    Flux<Map<String, Object>> subscribe(@Language("GraphQL") @NotNull String subscription,
+                                        @Nullable Map<String, Object> variables);
 }
