@@ -13,9 +13,11 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <reactor.version>3.3.9.RELEASE</reactor.version>
-        <cloudEvents.version>1.3.0</cloudEvents.version>
-        <junit5.version>5.7.0</junit5.version>
+        <reactor.version>3.4.7</reactor.version>
+        <spring.version>5.3.8</spring.version>
+        <cloudEvents.version>2.2.0</cloudEvents.version>
+        <jackson.version>2.12.3</jackson.version>
+        <junit5.version>5.7.2</junit5.version>
     </properties>
 
     <developers>
@@ -39,12 +41,12 @@
         <dependency>
             <groupId>org.jetbrains</groupId>
             <artifactId>annotations</artifactId>
-            <version>20.1.0</version>
+            <version>21.0.1</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>
-            <version>5.2.11.RELEASE</version>
+            <version>${spring.version}</version>
         </dependency>
         <dependency>
             <groupId>io.projectreactor</groupId>
@@ -57,9 +59,14 @@
             <version>${cloudEvents.version}</version>
         </dependency>
         <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+        <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-buffer</artifactId>
-            <version>4.1.54.Final</version>
+            <version>4.1.65.Final</version>
         </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
