@@ -36,6 +36,10 @@ public interface GraphqlExecutor {
                                       @Nullable Map<String, Object> variables,
                                       @Nullable String operationName);
 
+    default Flux<Map<String, Object>> subscribe(@Language("GraphQL") @NotNull String subscription) {
+        return subscribe(subscription, null);
+    }
+
     /**
      * GraphQL subscribe
      *
