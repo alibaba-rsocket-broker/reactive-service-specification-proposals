@@ -11,7 +11,7 @@ public class GraphqlQueryException extends Exception {
     private Map<String, Object> result;
 
     public GraphqlQueryException(Map<String, Object> result) {
-        super(result.get("error").toString());
+        super(result.get("errors").toString());
         this.result = result;
     }
 
